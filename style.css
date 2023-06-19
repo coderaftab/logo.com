@@ -1,0 +1,639 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&family=Poppins:wght@400;500&display=swap');
+
+:root{
+    /* custom colors  */
+    --rose-clr: #f53d73;
+    --bright-red-clr: #ff6357;
+    --black-clr: black;
+    --white-clr: white;
+    --bright-black-clr: #777171;
+    /* font family  */
+    --ff-pop: 'Poppins', sans-serif;
+    /* font weight  */
+    --fw-400: 400;
+    --fw-500: 500;
+
+    /* font size  */
+    font-size: 10px;
+    --fs-first: clamp(3rem,5vw ,3.8rem);
+    --fs-second:clamp(4rem,5vw ,4.8rem);
+    --fs-text: 1.6rem;
+
+
+
+}
+/* css reset  */
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+*{
+  margin: 0;
+  padding:0;
+  /* box-sizing: border-box; */
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* utility classes  */
+.rose-clr{
+    color: var(--rose-clr);
+}
+.bright-red-clr{
+    color: var(--bright-red-clr);
+}
+.black-clr{
+    color: var(--black-clr);
+}
+.white-clr{
+    color: var(--white-clr);
+}
+.bright-black-clr{
+    color: var(--bright-black-clr);
+}
+.fw-400{
+    font-weight: var(--fw-400);
+}
+.fw-500{
+    font-weight: var(--fw-500);
+}
+.fs-first{
+    font-size: var(--fs-first);
+}
+.fs-second{
+    font-size: var(--fs-second);
+}
+.fs-text{
+    font-size: var(--fs-text);
+}
+.border{
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+/* general classes  */
+body{
+    font-size: 1.6rem;
+    font-family: var(--ff-pop);
+    
+    
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 115px;
+}
+header ul{
+    display: flex;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    margin-inline: clamp(.5rem,7vw - 6rem,2.5rem);
+    text-decoration: none;
+    font-weight: 900;
+    border: 1px solid transparent;
+    padding-inline: 1rem;
+    border-radius: 2rem;
+    color: rgb(255, 255, 255);
+  position: relative;
+}
+header ul li a::after{
+  content: '';
+  border-bottom: 2px solid white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2.2rem;
+  width: 0;
+  transition: all 300ms ease-in-out;
+}
+header ul li a:hover:after{
+  width: 100%;
+ 
+}
+
+.container-1{
+    margin-inline: 5rem;
+}
+.content{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+.content p:nth-child(3){
+  margin-block: 5rem;
+}
+.content p:nth-child(1){
+  margin: 15rem 0 2rem;
+  line-height: 4.5rem;
+}
+.content p:nth-child(2){
+  margin-block: -1rem;
+  line-height: 5rem;
+}
+.content p:nth-child(4){
+  margin-bottom: 5rem;
+}
+.image{
+  
+  width: 50%;
+  float: right;
+  /* border: 1px solid black; */
+}
+.image img{
+  width: 100%;
+  /* border: 1px solid black; */
+  margin-left: 2rem;
+}
+.backg{
+  background: url(https://cdn.animaapp.com/projects/644a40103a202b0c505c072e/releases/6485364db394759aaae878e6/img/vector-1.svg) no-repeat;
+  background-position: top right -50px;
+  background-size: 70%;
+  margin-top: -1px;
+  
+}
+.button{
+  width: 9em;
+  font-size: 24px;
+  border-radius: 30px;
+  padding: .3em .6em;
+  background: linear-gradient(to bottom, var(--rose-clr), var(--bright-red-clr));
+  color: white;
+  box-shadow: 0px 8px 20px #ff6456a6;
+  border: none;
+  transition: transform 200ms ease-in-out;
+}
+.button:hover{
+  transform: translateY(-.5rem);
+}
+.speciality{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-block: 2rem;
+  flex-wrap: wrap;
+}
+.parent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-inline: 2rem; */
+  justify-content: center;
+   min-height: 40.5rem;
+   width: 225px;
+   
+}
+.parent h2{
+  min-height: 72px;
+  text-align: center;
+  margin-block: 2rem;
+  
+}
+.parent p{
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--bright-black-clr);
+}
+.spec-img{
+  width: 154px;
+  height: 132px;
+  border-radius: 1rem;
+  background-color: #f5f5f5;
+  display: grid;
+  place-items: center;
+  border: 1px solid black;
+}
+.spec-img img{
+  width: 92px;
+}
+.image2{
+  width: 50%;
+  float: left;
+}
+.content2{
+  padding-bottom: 2rem;
+}
+.content2 p:nth-child(1){
+  margin: 10rem 0 2rem;
+  line-height: 4rem;
+}
+.content2 p:nth-child(2){
+  margin-block: -1rem;
+  line-height: 4.5rem;
+}
+.content2 p:nth-child(3){
+  margin-block: 5rem;
+}
+.backg2{
+  background: url(https://cdn.animaapp.com/projects/644a40103a202b0c505c072e/releases/6485364db394759aaae878e6/img/vector-2.svg) no-repeat;
+  background-size: 50%;
+  background-position: top 20px left -30px;
+  
+}
+.backg2 section{
+  margin-block: 5rem;
+}
+.image3{
+  overflow: hidden;
+  width: 50%;
+  float: right;
+  
+}
+.backg3{
+  background: url(https://cdn.animaapp.com/projects/644a40103a202b0c505c072e/releases/6485364db394759aaae878e6/img/vector-3.svg) no-repeat;
+  background-size: 50%;
+  background-position: top 100px right;
+  overflow: hidden;
+}
+.rose-clr-backg{
+  background-color: #f63e73;
+}
+.image4{
+  float: right;
+  width: 50%;
+  height: 20rem;
+
+}
+.image4 img{
+  width: 50%;
+  margin-inline: auto;
+  position: relative;
+  top: -15rem;
+  
+}
+.backg4{
+  margin: 18rem -1px 5rem;
+  width: 100%;
+  
+  
+}
+.backg4 section{
+  padding-block: 6rem;
+  
+  
+}
+.content4 p:nth-child(2){
+  color: var(--white-clr);
+  margin-block: 2rem;
+}
+.white-button{
+  background-color: var(--white-clr);
+  
+  font-weight: 900;
+  font-size: 17px;
+  border-radius: 5px;
+  position: relative;
+  border: none;
+  
+  
+}
+.white-button p{
+  border: 1px solid transparent;
+  padding: .8em 3em;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  transition: all 1.5s ease-in-out;
+  
+}
+.white-button p:hover{
+  color: #ffffff;
+  border: 1px solid  white;
+  
+  
+}
+
+.white-button::after{
+  content: '';
+  background-color: #f53d73;
+  width: 4rem;
+  height: 5.7rem;
+  /* border: 1px solid black; */
+  position: absolute;
+  top: 0;
+  left: -4rem;
+  z-index: 0;
+  transition: all 1s ease-in-out;
+
+}
+.white-button:hover::after{
+  width: 32rem;
+  
+}
+
+
+.backg5{
+  padding: 15rem 0 2rem;
+  background: url(https://cdn.animaapp.com/projects/644a40103a202b0c505c072e/releases/648601334a0609b49bcd7c28/img/vector-4.svg) no-repeat;
+  background-position: bottom;
+}
+.backg5 .grid{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.grid div{
+  
+}
+.pad{
+  /* border: 1px solid; */
+  padding: 1rem;
+}
+.footer-nav{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 518px;
+  
+}
+.footer-nav ul{
+  /* min-width: 150px; */
+  margin-inline: 2rem;
+}
+.footer-nav li{
+  list-style: none;
+  margin-block: 1.5rem;
+
+}
+.footer-nav li a{
+  color: var(--bright-black-clr);
+  text-decoration: none;
+  position: relative;
+
+
+}
+.footer-nav li a:not(.flex-media li a):after{
+  content: '';
+  border-bottom: 1px solid var(--bright-black-clr);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2.2rem;
+  width: 0;
+  transition: all 300ms ease-in-out;
+}
+.footer-nav li a:not(.flex-media li a):hover::after{
+  width: 100%;
+ 
+}
+
+.contact img{
+  width: 2.1rem;
+  margin-block: 1.8rem;
+
+}
+.image5{
+  width: 35rem;
+  padding-right: 2rem;
+}
+.email{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 37.5rem;
+}
+.grid2 p{
+  margin-block: 1.5rem;
+}
+.grid2 .form{
+  margin-block: 1rem;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1rem 1.2rem 0;
+  border-radius: 3.8rem;
+  background-color: #f63e73;
+  text-align: left;
+  
+
+}
+.grid2{
+  width: 100%;
+}
+input[type="email"]{
+  width: 70%;
+  /* text-align: left; */
+  /* font-size: 10px; */
+  height: 1.5rem;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  font-size: 10px;
+  border: none;
+  padding-left: 2rem;
+}
+
+input[type="email"]:focus{
+  outline: none;
+}
+input[type="submit"]{
+  border-radius: 2.7rem;
+  font-size: 1rem;
+  padding: .3rem 2rem;
+  background-color: var(--white-clr);
+  border: none;
+  margin-right: .5rem;
+}
+.email h3, .email p{
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  .image4 img{
+    position: relative;
+    top: 0;
+  }
+  .navbar{
+    display: none;
+  }
+  .grid-media, .container-1{
+    display: grid;
+  }
+  .container-1{
+    margin-inline: 2rem;
+  }
+  .content p:nth-child(1){
+    margin-top: 3rem;
+  }
+  .content2 p:nth-child(1){
+    margin-top: 3rem;
+  }
+  .image img{
+    margin-left: 0;
+    /* margin-inline: auto; */
+  }
+  .image,.image2,.image3,.image4,.image5{
+    margin-inline: auto;
+    min-width: 275px;
+  }
+  .image4{
+    margin-bottom: 2rem;
+  }
+  .flex-media{
+    display: flex;
+  }
+  .flex-media img{
+    margin-inline: 1rem;
+  }
+  .menu span{
+    display: block;
+  }
+  .fs-first{
+    text-align: center;
+  }
+  .fs-second{
+    text-align: center;
+  }
+  img:not(.contact img, .spec-img img, .image5 img){
+    animation: img-anime 0s ease-out ;
+  }
+  .spec-img img, .image5 img{
+    animation: img2 0s ease-in-out;
+  }
+  .content p:nth-child(1), .content2 p:nth-child(1), .content4 p:nth-child(1){
+    animation: text 0s ease-in-out;
+  }
+  .content p:not(:nth-child(1)), .content2 p:not(:nth-child(1)), .content4 p:not(:nth-child(1)), .content button,.content2 button{
+    animation: text2 0s ease-in-out;
+  }
+  
+}
+img:not(.contact img, .spec-img img, .image5 img)[data-scroll="in"]{
+  animation: img-anime 2s ease-out ;
+}
+.spec-img img[data-scroll="in"], .image5 img[data-scroll="in"]{
+  animation: img2 1s ease-in-out;
+}
+@keyframes img-anime {
+  0%{
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  40%{
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes img2 {
+  0%{
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  50%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.content p:nth-child(1)[data-scroll="in"], .content2 p:nth-child(1)[data-scroll="in"], .content4 p:nth-child(1)[data-scroll="in"]{
+  animation: text 1.5s ease-in-out;
+}
+.content p:not(:nth-child(1))[data-scroll="in"], .content2 p:not(:nth-child(1))[data-scroll="in"], .content4 p:not(:nth-child(1))[data-scroll="in"], .content button[data-scroll="in"],.content2 button[data-scroll="in"]{
+  animation: text2 1.5s ease-in-out;
+}
+
+
+@keyframes text {
+  0%{
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  50%{
+    
+    opacity: 1;
+  }
+}
+@keyframes text2 {
+  0%{
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  30%{
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  70%{
+    
+    opacity: 1;
+  }
+}
+.menu{
+  /* border: 1px solid white; */
+  
+  display: block;
+}
+.menu span{
+  width: 3rem;
+  /* height: 1rem; */
+  border: 2px solid white;
+  background-color: var(--white-clr);
+  margin-block: .2rem;
+  transition: all .5s ease-in-out;
+  /* display: none; */
+}
+
